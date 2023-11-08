@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+}
+.App {
+  background-color: #eee;
+  padding: 10px;
+}
+.App:hover {
+  background-color: rgb(26, 128, 196);
+  transition: 0.5s;
+}
+.App h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App h1:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  color: #fff;
+}
+.App nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.App nav ul {
+  margin: 25px 0;
+  padding: 0;
+}
+.App nav ul li {
+  list-style: none;
+}
+.App nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 25px;
+}
+.App nav ul li a:hover {
+  transition: 0.2s;
+  color: #fff;
+}
