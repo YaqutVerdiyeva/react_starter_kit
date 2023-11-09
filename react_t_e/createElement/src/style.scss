@@ -1,0 +1,31 @@
+// .content {
+//   background-color: pink;
+//   .text {
+//     span {
+//       background-color: greenyellow;
+//     }
+//   }
+// }
+* {
+  margin: 0;
+}
+#root {
+    background-color: wheat;
+  .navbar {
+    padding: 20px 0;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .links {
+      display: flex;
+      gap: 80px;
+      list-style: none;
+      .link {
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+      }
+    }
+  }
+}
