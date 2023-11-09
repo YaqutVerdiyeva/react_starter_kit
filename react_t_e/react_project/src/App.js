@@ -1,30 +1,58 @@
-import logo from "./logo.svg";
-import { useEffect } from "react";
-import Test from "./Test";
-import styles from "./App.module.css";
-import { Title } from "./Components";
-import Bootstrap from "./Bootstrap";
-import "./tailwind.css";
-import Tailwind from "./Tailwind";
+import "./style.scss";
+import { createElement, Fragment } from "react";
+function Button(props) {
+  return <button>{props.text}</button>;
+}
+
 function App() {
-  useEffect(() => {
-    console.log(styles);
-  }, []);
+  const todos = ["todo1", "todo2", "todo3"];
+  const name = "Yaqut";
+  const h1 = createElement("h1", null, "react.js");
+  const ul = createElement(
+    "ul",
+    null,
+    todos.map((todo) => createElement("li", null, todo))
+  );
+  const button = createElement(
+    Button,
+    {
+      text: "Button texti",
+    },
+    null
+  );
+  return createElement(
+    "main",
+    {
+      className: "test",
+      id: "main",
+    },
+    h1,
+    ul,
+    button
+  );
+  const searchFunction = () => {
+    alert("hello!");
+  };
   return (
-    <div className={styles.App}>
-      <Title>{process.env.NODE_ENV}</Title>
-      <Title theme="dark">{process.env.NODE_ENV}</Title>
-      <p>{process.env.REACT_APP_API_URL}</p>
-      <Test className="App" />
-      {process.env.NODE_ENV === "production" && (
-        <>
-          <img src="/logo192.png" />
-          <img src={logo} />
-        </>
-      )}
-      <Bootstrap />
-      <Tailwind />
-    </div>
+    <Fragment>
+      <Button text="hello button" />
+      <h1 tabIndex="3" style={{ color: "red", backgroundColor: "yellow" }}>
+        Hello World!
+      </h1>
+      <label htmlFor="search" tabIndex="2" onClick={searchFunction}>
+        Arama
+      </label>
+      <input type="text" id="search" tabIndex="1" />
+
+      <ul>
+        {todos.map(function (todo, index) {
+          return <li key={index}> {todo}</li>;
+        })}
+        {todos.map((todo) => (
+          <li key={todo}>{todo}</li>
+        ))}
+      </ul>
+    </Fragment>
   );
 }
 
