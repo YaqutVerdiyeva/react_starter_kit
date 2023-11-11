@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <button onClick={() => setShow(show => !show)}>
-        {show ? "gizle" : "goster"}
+        {show ? "Gizle" : "Goster"}
       </button>
       {show && <Test />}
     </>
